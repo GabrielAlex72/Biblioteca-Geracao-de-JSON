@@ -56,6 +56,7 @@ fun main(){
     Roda4.setPriority("largura",larguraR4)
 
     println(serializeAux(Carro))
+    println(Search(Carro))
 
     /*println(serialize2(object1))
     println(serialize2(object2))

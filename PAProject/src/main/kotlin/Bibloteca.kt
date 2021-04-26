@@ -90,6 +90,14 @@ fun serializeAux(obj:JsonEntity):String{
     }
     return result
 }
-fun Search(){
+fun Search(c:JsonEntity):MutableList<String>{
+    val getAllStrings = object : Visitor {
+        val list: MutableList<String> = mutableListOf()
+        override fun visit(l: JsonString) {
+            list.add(l.value)
+        }
+    }
+    c.accept(getAllStrings)
+    return getAllStrings.list
 
 }
