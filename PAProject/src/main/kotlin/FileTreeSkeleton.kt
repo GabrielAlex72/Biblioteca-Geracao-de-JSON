@@ -2,15 +2,16 @@ import org.eclipse.swt.SWT
 import org.eclipse.swt.events.*
 import org.eclipse.swt.layout.*
 import org.eclipse.swt.widgets.*
-import java.awt.Frame
-import javax.swing.ButtonGroup
-import javax.swing.JButton
-import javax.swing.text.Highlighter
 
 fun main() {
     //val w=Injector.create(Window::class,start(),"Carro")
     //val w = Injector.create(Window::class,inferênciaPorReflexão(newDataSet()),"WorkersDataSet")
-    val w=Injector.create(Window::class,inferênciaPorReflexão(workersSet()),"WorkersDataSet")
+    ShowHierarquieTree(workersSet(),"WorkersDataSet")
+    //val w=Injector.create(Window::class,inferênciaPorReflexão(workersSet()),"WorkersDataSet")
+    //w.open()
+}
+fun ShowHierarquieTree(obj: Any, s: String) {
+    val w=Injector.create(Window::class,inferênciaPorReflexão(obj),s)
     w.open()
 }
 
